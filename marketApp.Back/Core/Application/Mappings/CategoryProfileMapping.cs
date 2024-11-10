@@ -4,11 +4,11 @@ using marketApp.Back.Core.Domain;
 
 namespace marketApp.Back.Core.Application.Mappings
 {
-    public class ProductProfileMapping : Profile
+    public class CategoryProfileMapping : Profile
     {
-        public ProductProfileMapping()
-        {
-            this.CreateMap<Product, ProductListDto>().ReverseMap();
+        public CategoryProfileMapping() 
+        { 
+            this.CreateMap<Category, CategoryListDto>().ReverseMap();
         }
     }
 }

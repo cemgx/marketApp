@@ -8,6 +8,7 @@ namespace marketApp.Back.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+
     public class ProductsController : ControllerBase
     {
         private readonly IMediator mediator;
@@ -41,6 +42,21 @@ namespace marketApp.Back.Controllers
             }
             return NotFound();
         }
+
+        [HttpPost]
+        public async Task<IActionResult> Create(CreateProductCommandRequest request)
+        {
+            await this.mediator.Send(request);
+            return Created("", request);
+        }
+
+        [HttpPut]
+        public async Task<IActionResult> Update(UpdateProductCommandRequest request)
+        {
+            await this.mediator.Send(request);
+            return NoContent();
+        }
+
 
     }
 }

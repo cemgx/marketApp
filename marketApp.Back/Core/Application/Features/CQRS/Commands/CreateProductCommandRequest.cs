@@ -1,9 +1,9 @@
-﻿namespace marketApp.Back.Core.Domain
-{
-    public class Product
-    {
-        public  int Id { get; set; }
+﻿using MediatR;
 
+namespace marketApp.Back.Core.Application.Features.CQRS.Commands
+{
+    public class CreateProductCommandRequest : IRequest
+    {
         public string? Name { get; set; }
 
         public int Stock { get; set; }
@@ -11,7 +11,5 @@
         public decimal Price { get; set; }
 
         public int CategoryId { get; set; }
-
-        public Category? Category { get; set; }
     }
 }
