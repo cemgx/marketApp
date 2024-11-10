@@ -49,7 +49,7 @@ namespace marketApp.Back.Controllers
         public async Task<IActionResult> Delete(int id)
         {
             await this.mediator.Send(new DeleteCategoryCommandRequest(id));
-            return NoContent();
+            return Ok();
         }
     }
 }
